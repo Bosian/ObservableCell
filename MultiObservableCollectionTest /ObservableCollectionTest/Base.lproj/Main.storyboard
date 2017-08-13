@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ObservableCollectionTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rue-s9-yQf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="587"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="10j-Gs-tIL" style="IBUITableViewCellStyleDefault" id="brA-84-z0f">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="brA-84-z0f" id="joK-8R-vOC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="10j-Gs-tIL">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9JJ-KP-yak"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="TgG-dC-lfA"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="A0Z-ja-TDJ">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJl-QY-q4L">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVV-ez-DvB">
+                                                <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
+                                                <state key="normal" title="Add"/>
+                                                <connections>
+                                                    <action selector="addHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qDF-Eu-XPK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDm-z2-wkC">
+                                                <rect key="frame" x="87" y="0.0" width="87" height="30"/>
+                                                <state key="normal" title="Delete"/>
+                                                <connections>
+                                                    <action selector="deleteHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7XS-qe-HbG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QH6-qV-7Ro">
+                                                <rect key="frame" x="174" y="0.0" width="87" height="30"/>
+                                                <state key="normal" title="Reload"/>
+                                                <connections>
+                                                    <action selector="reloadHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9GJ-f2-nq9"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNb-UB-Kkx">
+                                                <rect key="frame" x="261" y="0.0" width="20" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="HeH-u3-NYt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="RXX-7u-8x4">
+                                                <rect key="frame" x="281" y="0.0" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="stepperHandler:" destination="BYZ-38-t0r" eventType="valueChanged" id="UF1-uI-heb"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="QH6-qV-7Ro" firstAttribute="width" secondItem="uDm-z2-wkC" secondAttribute="width" id="Hl9-fD-I0e"/>
+                                            <constraint firstItem="uDm-z2-wkC" firstAttribute="width" secondItem="OVV-ez-DvB" secondAttribute="width" id="i2Z-g0-leb"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtN-tG-gaF">
+                                        <rect key="frame" x="0.0" y="30" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATD-sV-mnO">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="30"/>
+                                                <state key="normal" title="Add Section"/>
+                                                <connections>
+                                                    <action selector="addSectionHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jNu-Lh-Nu8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTn-21-c2w">
+                                                <rect key="frame" x="101" y="0.0" width="101" height="30"/>
+                                                <state key="normal" title="Delete Section"/>
+                                                <connections>
+                                                    <action selector="deleteSectionHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R2q-i1-u5K"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfW-MZ-HlJ">
+                                                <rect key="frame" x="202" y="0.0" width="101" height="30"/>
+                                                <state key="normal" title="Reload Section"/>
+                                                <connections>
+                                                    <action selector="reloadSectionHandler:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uau-sE-9WH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krT-5Y-bEw">
+                                                <rect key="frame" x="303" y="0.0" width="72" height="30"/>
+                                                <state key="normal" title="RemoveAll"/>
+                                                <connections>
+                                                    <action selector="removeAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aLP-es-XGS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="gTn-21-c2w" firstAttribute="width" secondItem="ATD-sV-mnO" secondAttribute="width" id="JQG-BA-bXU"/>
+                                            <constraint firstItem="yfW-MZ-HlJ" firstAttribute="width" secondItem="gTn-21-c2w" secondAttribute="width" id="sbx-YT-XoC"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="A0Z-ja-TDJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2K0-kU-3Sz"/>
+                            <constraint firstAttribute="trailing" secondItem="A0Z-ja-TDJ" secondAttribute="trailing" id="8Sx-zY-jAp"/>
+                            <constraint firstItem="rue-s9-yQf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="AdI-6e-vdE"/>
+                            <constraint firstAttribute="bottom" secondItem="A0Z-ja-TDJ" secondAttribute="bottom" id="Cs8-LA-y0D"/>
+                            <constraint firstAttribute="trailing" secondItem="rue-s9-yQf" secondAttribute="trailing" id="FG9-QK-iwt"/>
+                            <constraint firstItem="rue-s9-yQf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="nxC-c7-yio"/>
+                            <constraint firstItem="A0Z-ja-TDJ" firstAttribute="top" secondItem="rue-s9-yQf" secondAttribute="bottom" id="uYq-Hh-Jlz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sectionLabel" destination="bNb-UB-Kkx" id="kw4-RJ-kfP"/>
+                        <outlet property="stepper" destination="RXX-7u-8x4" id="fuu-rN-1lW"/>
+                        <outlet property="tableView" destination="rue-s9-yQf" id="umq-qU-YBQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
