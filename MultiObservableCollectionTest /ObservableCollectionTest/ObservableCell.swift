@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ObservableCell<TSection, TRow> {
+public class ObservableCell<TSection, TRow>: Collection {
     
     public typealias CellType = (section: TSection, row: ObservableCollection<TRow>)
     
@@ -19,6 +19,18 @@ public class ObservableCell<TSection, TRow> {
     private let insertSectionsAnimation: UITableViewRowAnimation
     private let deleteSectionsAnimation: UITableViewRowAnimation
     private let reloadSectionsAnimation: UITableViewRowAnimation
+    
+    public var startIndex: Int {
+        return collection.startIndex
+    }
+    
+    public var endIndex: Int {
+        return collection.endIndex
+    }
+    
+    public func index(after i: Int) -> Int {
+        return collection.index(after: i)
+    }
     
     public var count: Int {
         return collection.count
